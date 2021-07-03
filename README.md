@@ -4,4 +4,5 @@
 - `git clone git@github.com:devs-ryan/BillableTime.git`
 - pip install PySimpleGUI
 - change #! path to python3 interpretor on your machine (if different)
+- `chmod +x timer.py`
 - `./timer.py`
