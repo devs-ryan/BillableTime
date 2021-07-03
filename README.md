@@ -9,3 +9,8 @@
 - change #! path to python3 interpretor on your machine (if different)
 - `chmod +x timer.py`
 - `./timer.py`
+
+## Notes:
+
+- There is a minimum of 10 minutes set in the python file look for `if (counter // 100 < 600):` if you want to change this.
+- MIT License
