@@ -116,7 +116,7 @@ counter = 0
 
 # function: updateTimer(counter)
 def updateTimer(counter):
-    timer = '{:02d}:{:02d}:{:02d}.{:02d}'.format((counter // 100) // 3600, (counter // 100) // 60, (counter // 100) % 60, counter % 100)
+    timer = '{:02d}:{:02d}:{:02d}.{:02d}'.format((counter // 100) // 3600, ((counter // 100) % 3600) // 60, (counter // 100) % 60, counter % 100)
     window['_TIMER_'].update(timer)
 
 # function: saveTime(counter)
@@ -129,7 +129,7 @@ def saveTime(counter):
         counter = 60000
     now = datetime.datetime.now()
     start = now - datetime.timedelta(seconds=(counter // 100))
-    timer = '{:02d}:{:02d}:{:02d}.{:02d}'.format((counter // 100) // 3600, (counter // 100) // 60, (counter // 100) % 60, counter % 100)
+    timer = '{:02d}:{:02d}:{:02d}.{:02d}'.format((counter // 100) // 3600, ((counter // 100) % 3600) // 60, (counter // 100) % 60, counter % 100)
     rowTotal = round(float((counter // 100) / 3600) * float(hourlyRate), 2)
     row = [now.strftime("%d/%m/%Y"), currentDesc.rstrip() if currentDesc != '\n' else 'N/A', start.strftime("%H:%M:%S"), now.strftime("%H:%M:%S"), timer, '$' + str(hourlyRate), "${:.2f}".format(rowTotal)]
     total += rowTotal
